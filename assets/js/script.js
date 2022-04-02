@@ -7,6 +7,7 @@ var apiKey = "18ef42aafc64b56f80b4c7a1690f47fd";
 var searchBtn = document.querySelector('#searchBtn');
 var citySearch = document.querySelector('#citySearch');
 var day0 = document.querySelector('#day0');
+var icon0 = document.querySelector('#icon0');
 var temp0 = document.querySelector('#temp0');
 var wind0 = document.querySelector('#wind0');
 var humid0 = document.querySelector('#humid0');

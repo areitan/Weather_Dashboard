@@ -15,7 +15,7 @@ Weather Dashboard Example
 
 Deployed Weather Dashboard Screenshot
 
-![Deployed Weather Dashboard Screenshot](./assets/images/********.png)
+![Deployed Weather Dashboard Screenshot](./assets/images/Weather_Dashboard.png)
 
 
 ## Process
