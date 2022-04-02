@@ -24,6 +24,7 @@ The first step n this process was to go to the [OpenWeather website](https://ope
 
 1. I added the basic tags to the ```.html``` file so I would have a structure to build from.
 2. I used Bootstrap to help get the design together.
+3. I added bootstrap containers rows and columns to define the areas of the page. 
 
 ### script.js
 
