@@ -4,8 +4,10 @@
 
 Given a screenshot of a weather dashboard, my task is to create a weather dashboard which allows the user to search for a city and have the current and future weather conditions displayed on the page.
 
+NOTE: I have had multiple work committments this week that have not allowed me to work on this project, and I don't feel well. This project is a work in progress. 
+
 - [Git Hub Repository](https://github.com/areitan/Weather_Dashboard)
-- [Weather Dashboard Deployed Application](********)
+- [Weather Dashboard Deployed Application](https://areitan.github.io/Weather_Dashboard/)
 
 Weather Dashboard Example
 
@@ -28,6 +30,7 @@ The first step n this process was to go to the [OpenWeather website](https://ope
 
 ### script.js
 
+1. 
 
 
 ### style.css
@@ -36,7 +39,7 @@ The first step n this process was to go to the [OpenWeather website](https://ope
 
 ## How To Contribute
 
-Suggestions are always welcome. I'm sure this is not the most elegant way to write this code, and there could be improvement.
+Suggestions are always welcome. I'm sure this is not the most elegant way to write this code, and there could be improvement. I am unable to finish working on this project before the due date. IT is a work in progress. 
 
 ## Credits
 - [Bootstrap: Introduction](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
