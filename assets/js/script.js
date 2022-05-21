@@ -3,6 +3,9 @@
 // https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={18ef42aafc64b56f80b4c7a1690f47fd}
 
 var apiKey = "18ef42aafc64b56f80b4c7a1690f47fd";
+var url = "https://api.openweathermap.org/data/2.5/onecall";
+var lat;
+var lon;
 
 var searchBtn = document.querySelector('#searchBtn');
 var citySearch = document.querySelector('#citySearch');
@@ -15,3 +18,22 @@ var city = document.querySelector('#city');
 
 // parameters from API current.dt current.temp current.humidity current.wind_speed current.weather.icon current.uvi
 // daily.dt daily.temp daily.humidity daily.wind_speed daily.weather.icon daily.uvi
+
+
+var searchBtnHandler = function (event) {
+    event.preventDefault();
+  
+    var citySearch = nameInputEl.value.trim();
+  
+    if (citySearch) {
+      getUserRepos(citySearch);
+  
+      repoContainerEl.textContent = '';
+      nameInputEl.value = '';
+    } else {
+      alert('Please enter a GitHub username');
+    }
+  };
+
+
+searchBtn.addEventListener('submit', searchBtnHandler);
