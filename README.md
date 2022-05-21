@@ -1,51 +1,86 @@
-# Weather_Dashboard
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+---
 ## Description
 
-Given a screenshot of a weather dashboard, my task is to create a weather dashboard which allows the user to search for a city and have the current and future weather conditions displayed on the page.
+Given a screenshot of a weather dashboard, my task is to create a similar weather dashboard using HTML, JavaScript and CSS, which allows the user to search for a city and have the current and future weather conditions displayed on the page.
 
-NOTE: I have had multiple work committments this week that have not allowed me to work on this project, and I don't feel well. This project is a work in progress, but I am unable to complete it at the moment. 
+---
+## Table of Contents
+
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Tests](#tests)
+  - [Contribute](#contribute)
+  - [Credits](#credits)
+  - [License](#license)
+
+
+---
+## Installation
+
+This application can be run in a browser.
 
 - [Git Hub Repository](https://github.com/areitan/Weather_Dashboard)
 - [Weather Dashboard Deployed Application](https://areitan.github.io/Weather_Dashboard/)
 
-Weather Dashboard Example
 
+---
+## Usage
+
+This application is run in a browser and takes user input to fetch information from an API. 
+
+### Weather Dashboard Example
 ![Weather Dashboard Example](./assets/images/06-server-side-apis-homework-demo.png)
 
-Deployed Weather Dashboard Screenshot
-
+### Deployed Weather Dashboard Screenshot
 ![Deployed Weather Dashboard Screenshot](./assets/images/Weather_Dashboard.png)
 
 
-## Process
+---
+## Tests
 
-1. The first step n this process was to go to the [OpenWeather website](https://openweathermap.org/) and create an account to get an API token.
-2. I drew a wireframe with pencil and paper to try to map out how to use bootstrap contianers, rows and columns.
-
-### index.html
-
-1. I added the basic tags to the ```.html``` file so I would have a structure to build from.
-2. I used Bootstrap to help get the design together and added the links to the ```.html``` file.
-3. I added bootstrap containers rows and columns to define the areas of the page. 
-4. Added JQuery link.
-5. Started adding ID's for use in the ```.js``` file.
+Tests were preformed by manually entering data.
 
 
-### script.js
+--- 
+## Contribute
 
-1. I started adding variables.
+In order to create this application, I used the skills I have at the moment. I am open to suggestions, if there are ways to streamline the code or if any bugs are found.
 
-
-### style.css
-
-
-
-## How To Contribute
-
-Suggestions are always welcome. I'm sure this is not the most elegant way to write this code, and there could be improvement. There are many elements yet to be added. I need to write out the javascript and add functionality for pulling from the OpenWeather API. I am unable to finish working on this project before the due date. It is a work in progress. 
-
+---
 ## Credits
-- [Bootstrap: Introduction](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 
-- Trilogy Education Services, LLC for the example and sample code throughout the week 6 activities.
+- [OpenWeather website](https://openweathermap.org/)
+- [Bootstrap: Introduction](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+- Trilogy Education Services, LLC for the starter code and example code throughout the week 6 exercises.
+- My tutor
+
+### Questions
+
+For any question, please contact me on GitHub at: [areitan](https://github.com/areitan) or by email at <areitan@fredhutch.org>.
+
+---
+
+## License
+
+Copyright (c) ```<2022> <copyright April Reitan>```
+
+MIT License:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
