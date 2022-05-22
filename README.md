@@ -54,7 +54,7 @@ In order to create this application, I used the skills I have at the moment. I a
 - [OpenWeather website](https://openweathermap.org/)
 - [Bootstrap: Introduction](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 - Trilogy Education Services, LLC for the starter code and example code throughout the week 6 exercises.
-- My tutor
+- Armando Osorio, my tutor
 
 ### Questions
 
