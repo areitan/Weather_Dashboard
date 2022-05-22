@@ -6,9 +6,9 @@
 
 
 var apiKey = "18ef42aafc64b56f80b4c7a1690f47fd";
-var url = "https://api.openweathermap.org/data/2.5/onecall" + lat + "&" + lon + "&exclude=hourly,daily&appid=" + apiKey;
+var url = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&exclude=minutely,hourly,alerts&appid=" + apiKey;
 
-var cityCoordURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=" + apiKey
+var cityCoordURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=" + apiKey;
 
 
 var latLonArray = [];;
@@ -47,7 +47,14 @@ var wind0 = document.querySelector('#wind0');
 var humid0 = document.querySelector('#humid0');
 var city = document.querySelector('#city');
 
-
+fetch(cityCoordURL)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        forecastArray = data.results
+        console.log("latLonArray", latLonArray)
+    })
 
 fetch(url)
     .then(function (response) {
@@ -62,16 +69,7 @@ fetch(url)
 var searchBtnHandler = function (event) {
     event.preventDefault();
 
-    var citySearch = nameInputEl.value.trim();
-
-    if (citySearch) {
-        getUserRepos(citySearch);
-
-        repoContainerEl.textContent = '';
-        nameInputEl.value = '';
-    } else {
-        alert('Please enter a city');
-    }
+    
 };
 
 
