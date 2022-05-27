@@ -24,11 +24,7 @@ var wind0 = document.querySelector('#wind0');
 var humid0 = document.querySelector('#humid0');
 var city = document.querySelector('#city');
 var forecast = document.querySelector('#forecast');
-
-
-
-
-
+var current = document.querySelector('#current');
 
 var searchBtnHandler = function (event) {
     event.preventDefault();
@@ -51,16 +47,28 @@ var searchBtnHandler = function (event) {
                     forecastArray = data.results
                     console.log("data", data)
 
+var currentTemplate = `<div class="border col-10 p-3">
+<h2><span id="city">${citySearch.value}</span><span id="day0"> ${moment.unix(data.current.dt).format("MM/DD/YYYY")}</span>
+</h2>
+<span id="icon0"></span>
+<p>Temp: <span id="temp0">${data.current.temp}</span></p>
+<p>Wind: <span id="wind0">${data.current.wind_speed}</span>MPH</p>
+<p>Humidity: <span id="humid0">${data.current.humidity}</span>%</p>
+<p>UV Index: <span id="uvi0">${data.current.uvi}</span></p>
+</div>`
+
+current.innerHTML = currentTemplate
+
                     var forecastHTML = [];
                     for(var i =1; i<6; i++) {
-                        var day = new Date (data.daily[i].dt*1000);
+                        
 
 var template = `<div class="container">
 <div class="row">
     <div class="col-2">
         <div class="border col-10 p-3">
-            <h3><span id="day1">${day}</span></h3>
-            <i id="icon1"></i>
+            <h3><span id="day1">${moment.unix(data.daily[i].dt).format("MM/DD/YYYY")}</span></h3>
+            <img id="icon1" src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png"/>
             <p>Temp: <span id="temp1">${data.daily[i].temp.day}</span></p>
             <p>Wind: <span id="wind1">${data.daily[i].wind_speed}</span></p>
             <p>Humidity: <span id="humid1">${data.daily[i].humidity}</span></p>
@@ -68,6 +76,7 @@ var template = `<div class="container">
     </div>
     </div>
 </div>`
+
 forecastHTML.push(template);
                     }
                     var completeForecast = forecastHTML.join("");
