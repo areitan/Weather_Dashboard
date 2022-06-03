@@ -63,19 +63,15 @@ current.innerHTML = currentTemplate
                     for(var i =1; i<6; i++) {
                         
 
-var template = `<div class="container">
-<div class="row">
-    <div class="col-2">
-        <div class="border col-10 p-3">
+var template = `<div class="card border col-2 p-3">
+           <div>
             <h3><span id="day1">${moment.unix(data.daily[i].dt).format("MM/DD/YYYY")}</span></h3>
             <img id="icon1" src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png"/>
             <p>Temp: <span id="temp1">${data.daily[i].temp.day}</span></p>
             <p>Wind: <span id="wind1">${data.daily[i].wind_speed}</span></p>
             <p>Humidity: <span id="humid1">${data.daily[i].humidity}</span></p>
         </div>
-    </div>
-    </div>
-</div>`
+       </div>`
 
 forecastHTML.push(template);
                     }
