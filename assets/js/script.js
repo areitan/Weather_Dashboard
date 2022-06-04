@@ -6,9 +6,6 @@
 
 
 var apiKey = "18ef42aafc64b56f80b4c7a1690f47fd";
-
-
-
 var latLonArray = [];;
 var forecastArray = [];
 
@@ -50,9 +47,9 @@ var searchBtnHandler = function (event) {
 var currentTemplate = `<div class="border col-10 p-3">
 <h2><span id="city">${citySearch.value}</span><span id="day0"> ${moment.unix(data.current.dt).format("MM/DD/YYYY")}</span>
 </h2>
-<span id="icon0"></span>
-<p>Temp: <span id="temp0">${data.current.temp}</span></p>
-<p>Wind: <span id="wind0">${data.current.wind_speed}</span>MPH</p>
+<img id="icon1" src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png"/>
+<p>Temp: <span id="temp0">${data.current.temp}</span>&deg;</p>
+<p>Wind: <span id="wind0">${data.current.wind_speed}</span> MPH</p>
 <p>Humidity: <span id="humid0">${data.current.humidity}</span>%</p>
 <p>UV Index: <span id="uvi0">${data.current.uvi}</span></p>
 </div>`
@@ -63,13 +60,13 @@ current.innerHTML = currentTemplate
                     for(var i =1; i<6; i++) {
                         
 
-var template = `<div class="card border col-2 p-3">
+var template = `<div class="card text-center border col-2">
            <div>
             <h3><span id="day1">${moment.unix(data.daily[i].dt).format("MM/DD/YYYY")}</span></h3>
             <img id="icon1" src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png"/>
-            <p>Temp: <span id="temp1">${data.daily[i].temp.day}</span></p>
-            <p>Wind: <span id="wind1">${data.daily[i].wind_speed}</span></p>
-            <p>Humidity: <span id="humid1">${data.daily[i].humidity}</span></p>
+            <p>Temp: <span id="temp1">${data.daily[i].temp.day}</span>&deg;</p>
+            <p>Wind: <span id="wind1">${data.daily[i].wind_speed}</span> MPH</p>
+            <p>Humidity: <span id="humid1">${data.daily[i].humidity}</span>%</p>
         </div>
        </div>`
 
