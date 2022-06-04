@@ -18,7 +18,8 @@ var city = document.querySelector('#city');
 var forecast = document.querySelector('#forecast');
 var current = document.querySelector('#current');
 var history = document.querySelector('#history');
-var search = [];
+var searchList = document.querySelector('#searchList');
+var searchHistory = JSON.parse(localStorage.getItem('search')) || [];
 
 var searchBtnHandler = function (event) {
     event.preventDefault();
@@ -80,21 +81,24 @@ var searchBtnHandler = function (event) {
                     // --------------------------------------------------------------------
                     // // save search info
                     // Save search data as an object
-                    data.push(search) 
-                    // Store search object in local storage and convert to string
-                    localStorage.setItem("search", JSON.stringify(data));
-                    
-
+                    data.name = citySearch.value;
+                    searchHistory.push(data) 
+                   // Store search object in local storage and convert to string
+                   localStorage.setItem("search", JSON.stringify(searchHistory));
+                                       
                     // Use JSON.parse() to create object
-                    if (citySearch !== null) {
-                        for (var i = 0; i < data.length; i++) {
-                            var searchList = document.createElement("li")
-                            searchList.textContent = lastSearch[i].
-                                scoreList.appendChild(searchList)
-                        }
-                    } else {
-                        return;
-                    }
+                   if (citySearch.value !== null) {
+                      searchList.innerHTML = '';
+                      for (var i = searchHistory.length - 1; i >= 0; i--) {
+                        var searchListItem = document.createElement("li");
+                        var searchHistoryButton = document.createElement('button');
+                        searchHistoryButton.textContent = searchHistory[i].name;
+                        searchListItem.append(searchHistoryButton)
+                        searchList.appendChild(searchListItem);
+                     }
+                   } else {
+                     return;
+                   }
 
                     // -----------------------------------------------------------------------
                 })
@@ -102,5 +106,13 @@ var searchBtnHandler = function (event) {
 
 };
 
+// page load events
+function init() {
+
+
+}
 
 searchBtn.addEventListener('click', searchBtnHandler);
+
+//  Calls init function
+init();
