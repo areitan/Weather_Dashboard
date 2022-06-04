@@ -15,9 +15,9 @@
 
 <body>
     <!-- Heading -->
-    <div class="container flex-column bg-info text-center">
+    <header class="container flex-column bg-info text-center">
         <h1>Weather Dashboard</h1>
-    </div>
+    </header>
     <!-- Main container -->
     <!-- Input Form container -->
     <div class="row justify-content-center">
@@ -27,7 +27,7 @@
                 <div class="row justify-content-center">
                     <div class="form text-center col-4">
                         <label for="City">Search for a City</label>
-                        <input type="text" class="form-control" id="citySearch" aria-describedby="enterCity">
+                        <input type="text" class="form-control text-center" id="citySearch" aria-describedby="enterCity">
                         <div>
                             <button type="submit" id="searchBtn" class="btn btn-primary">Search</button>
                         </div>
@@ -38,12 +38,12 @@
     </div>
 
     <!-- Current Weather Container -->
-    <div id="current">
+    <div class="row justify-content-center" id="current">
     </div>
     <!-- 5-Day Forecast Container -->
     <div>
-        <h3 class="five-day">5-Day Forecast</h3>
-        <div class="row" id="forecast">
+        <h2 class="row justify-content-center five-day">5-Day Forecast</h2>
+        <div class="row justify-content-center" id="forecast">
         </div>
     </div>
     <script src="./assets/js/script.js"></script>

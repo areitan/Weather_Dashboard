@@ -40,7 +40,7 @@ var searchBtnHandler = function (event) {
                     console.log("data", data)
 
 var currentTemplate = `<div class="text-center col-10 p-3">
-<h2><span id="city">${citySearch.value}</span><span id="day0"> ${moment.unix(data.current.dt).format("MM/DD/YYYY")}</span>
+<h2><span id="city">${citySearch.value}</span><span id="day0"> <br/>${moment.unix(data.current.dt).format("MM/DD/YYYY")}</span>
 </h2>
 <img id="icon1" src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png"/>
 <p>Temp: <span id="temp0">${data.current.temp}</span>&deg;</p>
