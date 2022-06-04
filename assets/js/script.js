@@ -14,11 +14,6 @@ var forecastArray = [];
 
 var searchBtn = document.querySelector('#searchBtn');
 var citySearch = document.querySelector('#citySearch');
-var day0 = document.querySelector('#day0');
-var icon0 = document.querySelector('#icon0');
-var temp0 = document.querySelector('#temp0');
-var wind0 = document.querySelector('#wind0');
-var humid0 = document.querySelector('#humid0');
 var city = document.querySelector('#city');
 var forecast = document.querySelector('#forecast');
 var current = document.querySelector('#current');
@@ -44,7 +39,7 @@ var searchBtnHandler = function (event) {
                     forecastArray = data.results
                     console.log("data", data)
 
-var currentTemplate = `<div class="border col-10 p-3">
+var currentTemplate = `<div class="text-center col-10 p-3">
 <h2><span id="city">${citySearch.value}</span><span id="day0"> ${moment.unix(data.current.dt).format("MM/DD/YYYY")}</span>
 </h2>
 <img id="icon1" src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png"/>
@@ -61,7 +56,7 @@ current.innerHTML = currentTemplate
                         
 
 var template = `<div class="card text-center border col-2">
-           <div>
+           <div class="daily">
             <h3><span id="day1">${moment.unix(data.daily[i].dt).format("MM/DD/YYYY")}</span></h3>
             <img id="icon1" src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png"/>
             <p>Temp: <span id="temp1">${data.daily[i].temp.day}</span>&deg;</p>
