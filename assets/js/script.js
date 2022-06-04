@@ -17,6 +17,8 @@ var citySearch = document.querySelector('#citySearch');
 var city = document.querySelector('#city');
 var forecast = document.querySelector('#forecast');
 var current = document.querySelector('#current');
+var history = document.querySelector('#history');
+var search = [];
 
 var searchBtnHandler = function (event) {
     event.preventDefault();
@@ -39,7 +41,12 @@ var searchBtnHandler = function (event) {
                     forecastArray = data.results
                     console.log("data", data)
 
-var currentTemplate = `<div class="text-center col-10 p-3">
+                    var search = {
+                        searchCity: citySearch.value.trim(),
+                        searchData: data,
+                    };
+
+                    var currentTemplate = `<div class="text-center col-10 p-3">
 <h2><span id="city">${citySearch.value}</span><span id="day0"> <br/>${moment.unix(data.current.dt).format("MM/DD/YYYY")}</span>
 </h2>
 <img id="icon1" src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png"/>
@@ -49,13 +56,13 @@ var currentTemplate = `<div class="text-center col-10 p-3">
 <p>UV Index: <span id="uvi0">${data.current.uvi}</span></p>
 </div>`
 
-current.innerHTML = currentTemplate
+                    current.innerHTML = currentTemplate
 
                     var forecastHTML = [];
-                    for(var i =1; i<6; i++) {
-                        
+                    for (var i = 1; i < 6; i++) {
 
-var template = `<div class="card text-center border col-2">
+
+                        var template = `<div class="card text-center border col-2">
            <div class="daily">
             <h3><span id="day1">${moment.unix(data.daily[i].dt).format("MM/DD/YYYY")}</span></h3>
             <img id="icon1" src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png"/>
@@ -65,12 +72,35 @@ var template = `<div class="card text-center border col-2">
         </div>
        </div>`
 
-forecastHTML.push(template);
+                        forecastHTML.push(template);
                     }
                     var completeForecast = forecastHTML.join("");
                     forecast.innerHTML = completeForecast
+
+                    // --------------------------------------------------------------------
+                    // // save search info
+                    // Save search data as an object
+                    data.push(search) 
+                    // Store search object in local storage and convert to string
+                    localStorage.setItem("search", JSON.stringify(data));
+                    
+
+                    // Use JSON.parse() to create object
+                    if (citySearch !== null) {
+                        for (var i = 0; i < data.length; i++) {
+                            var searchList = document.createElement("li")
+                            searchList.textContent = lastSearch[i].
+                                scoreList.appendChild(searchList)
+                        }
+                    } else {
+                        return;
+                    }
+
+                    // -----------------------------------------------------------------------
                 })
-        })};
+        })
+
+};
 
 
-    searchBtn.addEventListener('click', searchBtnHandler);
+searchBtn.addEventListener('click', searchBtnHandler);
