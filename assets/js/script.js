@@ -2,7 +2,7 @@
 
 // https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={18ef42aafc64b56f80b4c7a1690f47fd}
 
-// OpenWeather City Search http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={API key}
+// OpenWeather City Search https://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={API key}
 
 
 var apiKey = "18ef42aafc64b56f80b4c7a1690f47fd";
@@ -57,7 +57,7 @@ citySearch.value = "";
                     var currentTemplate = `<div class="text-center col-10 p-3">
 <h2><span id="city">${search}</span><span id="day0"> <br/>${moment.unix(data.current.dt).format("MM/DD/YYYY")}</span>
 </h2>
-<img id="icon1" src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png"/>
+<img id="icon1" src="https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png"/>
 <p>Temp: <span id="temp0">${data.current.temp}</span>&deg;</p>
 <p>Wind: <span id="wind0">${data.current.wind_speed}</span> MPH</p>
 <p>Humidity: <span id="humid0">${data.current.humidity}</span>%</p>
@@ -73,7 +73,7 @@ citySearch.value = "";
                         var template = `<div class="card text-center border col-2">
            <div class="daily">
             <h3><span id="day1">${moment.unix(data.daily[i].dt).format("MM/DD/YYYY")}</span></h3>
-            <img id="icon1" src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png"/>
+            <img id="icon1" src="https://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png"/>
             <p>Temp: <span id="temp1">${data.daily[i].temp.day}</span>&deg;</p>
             <p>Wind: <span id="wind1">${data.daily[i].wind_speed}</span> MPH</p>
             <p>Humidity: <span id="humid1">${data.daily[i].humidity}</span>%</p>
