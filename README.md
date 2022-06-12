@@ -33,14 +33,17 @@ This application is run in a browser and takes user input to fetch information f
 ### Weather Dashboard Example
 ![Weather Dashboard Example](./assets/images/06-server-side-apis-homework-demo.png)
 
-### Deployed Weather Dashboard Screenshot
-![Deployed Weather Dashboard Screenshot](./assets/images/Weather_Dashboard.png)
+### Weather Dashboard City Search
+![Deployed Weather Dashboard City Search](./assets/images/1_city_search.png)
+
+### Weather Dashboard Current Conditions and Forecast
+![Deployed Weather Dashboard Current Conditions and Forecast](./assets/images/2_weather.png)
 
 
 ---
 ## Tests
 
-Tests were preformed by manually entering data.
+Tests were preformed by manually entering data and console logging data.
 
 
 --- 
@@ -54,6 +57,7 @@ In order to create this application, I used the skills I have at the moment. I a
 - [OpenWeather website](https://openweathermap.org/)
 - [Bootstrap: Introduction](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 - Trilogy Education Services, LLC for the starter code and example code throughout the week 6 exercises.
+- BCS Learning Assistant
 - Armando Osorio, my tutor
 
 ### Questions

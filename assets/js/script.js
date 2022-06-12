@@ -23,9 +23,16 @@ var searchHistory = JSON.parse(localStorage.getItem('search')) || [];
 
 var searchBtnHandler = function (event) {
     event.preventDefault();
+    console.log(event.target.innerText)
     console.log(citySearch.value)
-    var cityCoordURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + citySearch.value + "&limit=5&appid=" + apiKey;
-
+    var search = ""
+    if (citySearch.value === ""){
+        search = event.target.innerText;
+    } else{
+search = citySearch.value;
+    }
+    var cityCoordURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + search + "&limit=5&appid=" + apiKey;
+citySearch.value = "";
     fetch(cityCoordURL)
         .then(function (response) {
             return response.json();
@@ -42,13 +49,13 @@ var searchBtnHandler = function (event) {
                     forecastArray = data.results
                     console.log("data", data)
 
-                    var search = {
-                        searchCity: citySearch.value.trim(),
-                        searchData: data,
-                    };
+                    // var search = {
+                    //     searchCity: citySearch.value.trim(),
+                    //     searchData: data,
+                    // };
 
                     var currentTemplate = `<div class="text-center col-10 p-3">
-<h2><span id="city">${citySearch.value}</span><span id="day0"> <br/>${moment.unix(data.current.dt).format("MM/DD/YYYY")}</span>
+<h2><span id="city">${search}</span><span id="day0"> <br/>${moment.unix(data.current.dt).format("MM/DD/YYYY")}</span>
 </h2>
 <img id="icon1" src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png"/>
 <p>Temp: <span id="temp0">${data.current.temp}</span>&deg;</p>
@@ -81,17 +88,18 @@ var searchBtnHandler = function (event) {
                     // --------------------------------------------------------------------
                     // // save search info
                     // Save search data as an object
-                    data.name = citySearch.value;
+                    data.name = search;
                     searchHistory.push(data) 
                    // Store search object in local storage and convert to string
                    localStorage.setItem("search", JSON.stringify(searchHistory));
                                        
                     // Use JSON.parse() to create object
-                   if (citySearch.value !== null) {
+                   if (search !== null) {
                       searchList.innerHTML = '';
                       for (var i = searchHistory.length - 1; i >= 0; i--) {
                         var searchListItem = document.createElement("li");
                         var searchHistoryButton = document.createElement('button');
+                        searchHistoryButton.addEventListener ('click', searchBtnHandler)
                         searchHistoryButton.textContent = searchHistory[i].name;
                         searchListItem.append(searchHistoryButton)
                         searchList.appendChild(searchListItem);
