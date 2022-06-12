@@ -31,7 +31,7 @@ var searchBtnHandler = function (event) {
     } else{
 search = citySearch.value;
     }
-    var cityCoordURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + search + "&limit=5&appid=" + apiKey;
+    var cityCoordURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + search + "&limit=5&appid=" + apiKey;
 citySearch.value = "";
     fetch(cityCoordURL)
         .then(function (response) {
